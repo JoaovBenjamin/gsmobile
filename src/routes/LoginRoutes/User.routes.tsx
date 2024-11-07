@@ -1,8 +1,8 @@
 import { NavigationContainer } from '@react-navigation/native'
 import React from 'react'
-import DrawerRoutes from './drawer.routes'
+import DrawerRoutes from '../LoginRoutes/drawer.routes'
 
-const Routes = () => {
+const UserRoutes = () => {
   return (
     <>
       <NavigationContainer>
@@ -11,4 +11,4 @@ const Routes = () => {
     </>
   )
 }
-export default Routes
+export default UserRoutes

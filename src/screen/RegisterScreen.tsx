@@ -1,11 +1,9 @@
-import { View, Text } from 'react-native'
+import RegisterForm from '@/app/Register/RegisterForm'
 import React from 'react'
 
 
 export default function RegisterScreen() {
   return (
-    <View>
-      <Text className='color-slate-300'>RegisterScreen</Text>
-    </View>
+    <RegisterForm/>
   )
 }
