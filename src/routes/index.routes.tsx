@@ -1,13 +1,12 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import TabsRoutes from './tabs.routes'
 import { NavigationContainer } from '@react-navigation/native'
+import React from 'react'
+import DrawerRoutes from './drawer.routes'
 
 const Routes = () => {
   return (
     <>
       <NavigationContainer>
-         <TabsRoutes/>
+         <DrawerRoutes/>
       </NavigationContainer>
     </>
   )

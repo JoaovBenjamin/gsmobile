@@ -15,7 +15,7 @@ export default function TabsRoutes() {
             options={{
                 tabBarIcon: ({color, size}) => (
                     <User color={color} size={size}/>
-                )
+                ),
             }}
             />
       <Tab.Screen 
