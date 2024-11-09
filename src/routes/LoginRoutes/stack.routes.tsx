@@ -5,15 +5,16 @@ import { createNativeStackNavigator, NativeStackNavigationProp } from '@react-na
 const Stack = createNativeStackNavigator();
 
 type StackNavigation = {
-    Home: undefined;
-    Login: undefined;
+  Home: undefined;
+  Login: undefined;
 
 }
 
 export type StackTypes = NativeStackNavigationProp<StackNavigation>
 export default function StackRoutes() {
   return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name='Login' component={LoginScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />
     </Stack.Navigator>
   );

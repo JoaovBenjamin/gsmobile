@@ -1,19 +1,15 @@
-import '../../global.css';
-import 'react-native-gesture-handler';
 import { ThemeProvider } from '@/providers/ThemeProvider';
-import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
+import 'react-native-gesture-handler';
+import '../../global.css';
 
-import { firebaseConfig } from '@/services/firebaseConfig';
-import UserRoutes from '@/routes/LoginRoutes/User.routes';
-import AuthRoutes from '@/routes/AuthRoutes/Auth.routes';
+import Routes from '@/routes/LoginRoutes/index.routes';
+
 
 export default function App() {
-  const firebase = initializeApp(firebaseConfig)
-  const auth = getAuth(firebase)
+
   return (
     <ThemeProvider>
-      {auth.currentUser ? <UserRoutes/> : <AuthRoutes/>}
+      <Routes />
     </ThemeProvider>
   );
 }

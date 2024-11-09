@@ -12,8 +12,10 @@
     "@expo/metro-runtime": "~3.2.3",
     "@expo/vector-icons": "^14.0.4",
     "@radix-ui/react-label": "^2.1.0",
+    "@react-native-async-storage/async-storage": "1.23.1",
     "@react-native-firebase/app": "^21.3.0",
     "@react-native-firebase/auth": "^21.3.0",
+    "@react-native-firebase/database": "^21.4.0",
     "@react-navigation/bottom-tabs": "^7.0.0",
     "@react-navigation/drawer": "^7.0.0",
     "@react-navigation/native": "^7.0.0",
@@ -39,8 +41,7 @@
     "react-native-svg": "^15.8.0",
     "react-native-web": "~0.19.10",
     "tailwind-merge": "^2.5.4",
-    "tailwindcss-animate": "^1.0.7",
-    "@react-native-async-storage/async-storage": "1.23.1"
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
