@@ -1,10 +1,12 @@
-import { View, Text } from 'react-native'
+import AddData from '@/actions/AddData'
+import PostList from '@/actions/GetData'
 import React from 'react'
+import { View } from 'react-native'
 
 const HomeScreen = () => {
   return (
     <View>
-      <Text>HomeScreen</Text>
+      <PostList/>
     </View>
   )
 }

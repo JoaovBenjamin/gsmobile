@@ -1,7 +1,7 @@
 import { Button } from '@/components/Button'
 import { Input } from '@/components/Input'
 import { Label } from '@/components/Label'
-import { StackTypes } from '@/routes/LoginRoutes/stack.routes'
+import { StackTypes } from '@/routes/stack.routes'
 import { firebaseConfig } from '@/services/firebaseConfig'
 import { useNavigation } from '@react-navigation/native'
 import { initializeApp } from 'firebase/app'

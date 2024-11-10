@@ -1,3 +1,5 @@
+import {initializeApp } from "@react-native-firebase/app";
+import { getDatabase } from "@react-native-firebase/database";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCU61duxPCf6fzG94SUNLhMlaS8_qrjn50",
@@ -9,5 +11,8 @@ export const firebaseConfig = {
   measurementId: "G-ZPX35EENDB",
   databaseURL: "https://global-mobile-97b99-default-rtdb.firebaseio.com/"
 };
+
+
+
 
 
