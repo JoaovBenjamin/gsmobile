@@ -32,8 +32,8 @@ const PostList = () => {
     return () => unsubscribe();
   }, []);
 
-  const goToUpdate = (postId: string, title: string, body: string) => {
-    navigation.navigate("Update", { postId, title, body });
+  const goToUpdate = (postId: string) => {
+    navigation.navigate("Update", { postId });
   };
   
 
@@ -47,7 +47,7 @@ const PostList = () => {
           <View style={{ marginBottom: 20 }}>
             <Text>Título: {item.title}</Text>
             <Text>Conteúdo: {item.body}</Text>
-            <Button title="Editar" onPress={() => goToUpdate(item.id, item.title, item.body)} />
+            <Button title="Editar" onPress={() => goToUpdate(item.id)} />
           </View>
         )}
       />

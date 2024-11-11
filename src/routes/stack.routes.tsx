@@ -5,13 +5,15 @@ import { createNativeStackNavigator, NativeStackNavigationProp } from '@react-na
 
 const Stack = createNativeStackNavigator();
 
-type StackNavigation = {
+
+export type StackNavigation = {
   Home: undefined;
   Login: undefined;
-  Update: { postId: string; title: string; body: string }; 
+  Update: { postId: string }; // Define `postId` como um parâmetro da rota `Update`
 };
 
 export type StackTypes = NativeStackNavigationProp<StackNavigation>;
+
 
 export default function StackRoutes() {
   return (
