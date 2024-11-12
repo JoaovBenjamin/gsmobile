@@ -6,12 +6,15 @@ import { Label } from '@/components/Label'
 import { firebaseConfig } from '@/services/firebaseConfig'
 import { initializeApp } from 'firebase/app'
 import { getDatabase, ref, push, set, child } from 'firebase/database'
+import { useNavigation } from '@react-navigation/native'
+import { StackTypes } from '@/routes/stack.routes'
 
-const app = initializeApp(firebaseConfig)
-const db = getDatabase(app)
 
-const AddData
- = () => {
+
+const AddData = () => {
+    const app = initializeApp(firebaseConfig)
+    const db = getDatabase(app)
+    const navigation = useNavigation<StackTypes>()
     const [title, setTitle] = useState<string>('')
     const [body, setBody] = useState<string>('')
     
@@ -27,6 +30,7 @@ const AddData
             await set(newPostDB, newPost)
             console.log('Novo Post Cadastrado')
 
+            navigation.goBack()
             setTitle('')
             setBody('')
         } else {

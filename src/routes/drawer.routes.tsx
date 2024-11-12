@@ -20,15 +20,6 @@ export default function DrawerRoutes() {
       />
       <Drawer.Screen
         name='Home'
-        component={HomeScreen}
-        options={{
-          drawerIcon: ({ color, size }) => (
-            <Home color={color} size={size} />
-          )
-        }}
-      />
-      <Drawer.Screen
-        name='Update'
         component={StackRoutes}
         options={{
           drawerIcon: ({ color, size }) => (

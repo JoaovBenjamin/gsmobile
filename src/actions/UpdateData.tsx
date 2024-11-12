@@ -4,15 +4,16 @@ import { Button } from '@/components/Button';
 import { Input } from '@/components/Input';
 import { Label } from '@/components/Label';
 import { getDatabase, ref, get, set } from 'firebase/database';
-import { useRoute, RouteProp } from '@react-navigation/native';
+import { useRoute, RouteProp, useNavigation } from '@react-navigation/native';
 import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from '@/services/firebaseConfig';
-import { StackNavigation } from '@/routes/stack.routes'; // Certifique-se de que o caminho está correto
+import { StackNavigation, StackTypes } from '@/routes/stack.routes'; // Certifique-se de que o caminho está correto
 
 // Define o tipo para a rota `Update`, que inclui o `postId`
 type UpdateDataRouteProp = RouteProp<StackNavigation, 'Update'>;
 
 const UpdateData = () => {
+    const navigation = useNavigation<StackTypes>()
     const firebase = initializeApp(firebaseConfig);
     const db = getDatabase(firebase);
     const route = useRoute<UpdateDataRouteProp>();
@@ -44,6 +45,7 @@ const UpdateData = () => {
             await set(postRef, { title, body });
             console.log('Post atualizado com sucesso');
 
+            navigation.navigate('Home')
             setTitle('');
             setBody('');
         } else {
