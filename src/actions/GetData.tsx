@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, TouchableOpacity, FlatList } from 'react-native';
+import { Button } from '@/components/Button';
 import { useNavigation } from '@react-navigation/native';
 import { getDatabase, ref, onValue, remove } from 'firebase/database';
 import { initializeApp } from 'firebase/app';
@@ -52,9 +53,9 @@ const PostList = () => {
   return (
     <View className="flex-1 p-4">
       <View className="flex-row justify-end">
-        <TouchableOpacity onPress={goToCreate} className="p-2 bg-green-500 rounded-full">
+        <Button onPress={goToCreate} className="p-2 bg-green-500 rounded-full">
           <Plus color="white" size={24} />
-        </TouchableOpacity>
+        </Button>
       </View>
       
       <Text className="text-2xl font-bold mt-4 mb-4">Lista de Posts</Text>
@@ -67,18 +68,18 @@ const PostList = () => {
             <Text className="text-xl font-semibold mb-2">Título: {item.title}</Text>
             <Text className="text-base mb-4">Conteúdo: {item.body}</Text>
             <View className="flex-row justify-end space-x-4">
-              <TouchableOpacity
+              <Button
                 onPress={() => goToUpdate(item.id)}
                 className="p-2 bg-blue-500 rounded-full"
               >
                 <Pencil color="white" size={20} />
-              </TouchableOpacity>
-              <TouchableOpacity
+              </Button>
+              <Button
                 onPress={() => deletePost(item.id)}
                 className="p-2 bg-red-500 rounded-full"
               >
                 <Trash color="white" size={20} />
-              </TouchableOpacity>
+              </Button>
             </View>
           </View>
         )}

@@ -7,9 +7,7 @@ import { getDatabase, ref, get, set } from 'firebase/database';
 import { useRoute, RouteProp, useNavigation } from '@react-navigation/native';
 import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from '@/services/firebaseConfig';
-import { StackNavigation, StackTypes } from '@/routes/stack.routes'; // Certifique-se de que o caminho está correto
-
-// Define o tipo para a rota `Update`, que inclui o `postId`
+import { StackNavigation, StackTypes } from '@/routes/stack.routes'; 
 type UpdateDataRouteProp = RouteProp<StackNavigation, 'Update'>;
 
 const UpdateData = () => {
@@ -17,12 +15,12 @@ const UpdateData = () => {
     const firebase = initializeApp(firebaseConfig);
     const db = getDatabase(firebase);
     const route = useRoute<UpdateDataRouteProp>();
-    const { postId } = route.params; // Acessa o postId dos parâmetros de rota
+    const { postId } = route.params; 
 
     const [title, setTitle] = useState<string>('');
     const [body, setBody] = useState<string>('');
 
-    // Função para buscar os dados do post atual
+
     useEffect(() => {
         const fetchPost = async () => {
             const postRef = ref(db, `posts/${postId}`);
@@ -38,7 +36,6 @@ const UpdateData = () => {
         fetchPost();
     }, [db, postId]);
 
-    // Função para atualizar o post no Firebase
     async function handleUpdate() {
         if (title !== '' && body !== '') {
             const postRef = ref(db, `posts/${postId}`);

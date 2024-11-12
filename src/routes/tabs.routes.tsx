@@ -2,16 +2,17 @@ import LoginScreen from '@/screen/LoginScreen';
 import RegisterScreen from '@/screen/RegisterScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { User, UserPlus } from 'lucide-react-native';
+import StackRoutes from './stack.routes';
 
 
 const Tab = createBottomTabNavigator();
 
 export default function TabsRoutes() {
   return (
-    <Tab.Navigator screenOptions={{ headerShown: false }}>
+    <Tab.Navigator  initialRouteName="Login" screenOptions={{ headerShown: false }}>
       <Tab.Screen
         name="Login"
-        component={LoginScreen}
+        component={StackRoutes}
         options={{
           tabBarIcon: ({ color, size }) => (
             <User color={color} size={size} />
